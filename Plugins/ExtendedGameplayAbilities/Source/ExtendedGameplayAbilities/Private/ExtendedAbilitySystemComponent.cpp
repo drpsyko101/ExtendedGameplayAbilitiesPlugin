@@ -15,7 +15,7 @@ UExtendedAbilitySystemComponent::UExtendedAbilitySystemComponent(const FObjectIn
 FGameplayEffectSpecSet UExtendedAbilitySystemComponent::MakeEffectSpecSet(const FGameplayEffectSet& EffectSet, float Level)
 {
 	FGameplayEffectSpecSet SpecSet;
-	for (const TSubclassOf<UGameplayEffect> GameplayEffect : EffectSet.Effects)
+	for (const TSubclassOf<UGameplayEffect> &GameplayEffect : EffectSet.Effects)
 	{
 		FGameplayEffectSpecHandle Spec = MakeOutgoingSpec(GameplayEffect, Level, MakeEffectContext());
 		if (Spec.IsValid())
